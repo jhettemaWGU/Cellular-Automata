@@ -3,8 +3,8 @@ import random
 
 
 CELL_SIZE = 20
-GRID_WIDTH = 30
-GRID_HEIGHT = 20
+GRID_WIDTH = 90
+GRID_HEIGHT = 60
 DELAY = 100
 
 class CellularAutomata(tk.Canvas):
@@ -14,7 +14,7 @@ class CellularAutomata(tk.Canvas):
         super().__init__(master, width=width, height=height, bg="white")
         self.pack()
 
-        self.grid = [[random.choide([0, 1]) for _ in range(GRID_WIDTH)] for _ in range(GRID_HEIGHT)]
+        self.grid = [[random.choice([0, 1]) for _ in range(GRID_WIDTH)] for _ in range(GRID_HEIGHT)]
 
         self.draw_grid()
         self.after(DELAY, self.update_automaton)
